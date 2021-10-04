@@ -32,7 +32,7 @@ export default defineComponent({
         const menus = reactive([
             { title: 'Index', icon: 'mdi-web', url: '/' },
             { title: 'Home', icon: 'mdi-home', url: '/home' },
-            { title: 'Serch', icon: 'mdi-serch', url: 'serch' },
+            { title: 'Serch', icon: 'mdi-text-box-search', url: 'serch' },
             { title: 'About', icon: 'mdi-information-variant', url: '/about' },
         ])
         return {

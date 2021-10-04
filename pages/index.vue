@@ -18,10 +18,10 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref, reactive } from '@vue/composition-api'
-import Home from '@/components/Home'
-import Side from '@/components/Side'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import Home from '@/components/Home.vue'
+import Side from '@/components/Side.vue'
+import Header from '@/components/Header.vue'
+import Footer from '@/components/Footer.vue'
 
 export default defineComponent({
   components: {

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <v-app-bar color="primary" dark app>
+    <v-app-bar color="blue-grey lighten-1" dark app>
         <!-- <v-app-bar-nav-icon @clic.stop="drawer = !drawer"></v-app-bar-nav-icon> -->
-        <v-toolbar-title>掲示板</v-toolbar-title>
+        <v-toolbar-title>misogi</v-toolbar-title>
         <v-spacer></v-spacer>
         <v-toolbar-items>
         <v-btn text>For Enterprise</v-btn>

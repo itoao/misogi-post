@@ -1,16 +1,16 @@
 <template>
   <div>
-      <h1>あなたの投稿</h1>
+      <!-- <h1>あなたの禊</h1> -->
       <v-text-field
         v-model="$store.state.form.content"
-        label="投稿"
-        placeholder="ここにコメントしてください"
+        label="禊を開始する"
+        placeholder="ここに入力してください"
         outlined
         append-icon="mdi-check-bold"
         @keydown="onEnter"
         @click:append="createPost"
       ></v-text-field>
-      <h1>みんなの投稿</h1>
+      <h2>禊たち</h2>
       <v-card
         v-for="(item, index) in $store.state.items" :key="index"
         outlined
