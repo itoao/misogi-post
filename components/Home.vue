@@ -26,7 +26,8 @@
 
 <script lang="ts">
 import { defineComponent, useStore } from '@nuxtjs/composition-api'
-import Observable from 'zen-observable'
+// import Observable from 'zen-observable'
+// import { GraphQLResult } from '@aws-amplify/api-graphql'
 import { API, graphqlOperation } from "aws-amplify"
 import { onCreatePost } from "~/src/graphql/subscriptions"
 // v-for="item in items" :key=item.content
@@ -58,7 +59,7 @@ export default defineComponent({
       // 送信して保存された内容がリアルタイムに画面に反映されるようにする
       subscribe(): void {
         API.graphql(
-          graphqlOperation(onCreatePost) as Observable<object>
+          graphqlOperation(onCreatePost)
         ).subscribe({
           next: (e: HTMLInputElement) => {
             // コメントが送信されて追加された際、送信内容を一覧に追加

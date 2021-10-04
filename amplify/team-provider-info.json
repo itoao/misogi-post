@@ -11,5 +11,31 @@
       "StackId": "arn:aws:cloudformation:ap-northeast-1:604126380041:stack/amplify-misogipost-dev-161717/4e0a5400-12d0-11ec-852e-066c9de695cb",
       "AmplifyAppId": "d226e3zg554xnl"
     }
+  },
+  "production": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-misogipost-production-153951-authRole",
+      "UnauthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-production-153951-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-production-153951-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-misogipost-production-153951-deployment",
+      "UnauthRoleName": "amplify-misogipost-production-153951-unauthRole",
+      "StackName": "amplify-misogipost-production-153951",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:604126380041:stack/amplify-misogipost-production-153951/e0f09bc0-24dd-11ec-8b3a-062bdbc94911",
+      "AmplifyAppId": "d226e3zg554xnl"
+    }
+  },
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-misogipost-staging-160800-authRole",
+      "UnauthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-staging-160800-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-staging-160800-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-misogipost-staging-160800-deployment",
+      "UnauthRoleName": "amplify-misogipost-staging-160800-unauthRole",
+      "StackName": "amplify-misogipost-staging-160800",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:604126380041:stack/amplify-misogipost-staging-160800/cf60ec80-24e1-11ec-a913-0640a6f9100d",
+      "AmplifyAppId": "d226e3zg554xnl"
+    }
   }
 }
