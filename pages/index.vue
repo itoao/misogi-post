@@ -1,51 +1,35 @@
 <template>
   <div>
     <v-app>
-      <v-content>
+      <v-main>
         <v-container>
           <v-layout wrap>
-            <v-flex >
-              <Side></Side>
-              <Header></Header>
-              <Home></Home>
-              <Footer></Footer>
+            <v-flex>
+              <side />
+              <header-content />
+              <home />
+              <footer-content />
             </v-flex>
           </v-layout>
         </v-container>
-      </v-content>
+      </v-main>
     </v-app>
   </div>
 </template>
+
 <script lang="ts">
-import { defineComponent, ref, reactive } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 import Home from '@/components/Home.vue'
 import Side from '@/components/Side.vue'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import HeaderContent from '@/components/Header.vue'
+import FooterContent from '@/components/Footer.vue'
 
 export default defineComponent({
   components: {
+    FooterContent,
+    HeaderContent,
     Home,
-    Side,
-    Header,
-    Footer,
-  },
-  // props: {
-  //   drawer
-  // }
-  setup() {
-    const drawer = ref(null)
-    const supports = reactive([
-        'Consulting and suppourt',
-        'Discord community',
-        'Report a bug',
-        'Github issue board',
-        'Stack overview'
-    ])
-    return {
-      drawer,
-      supports
-    }
+    Side
   }
 })
 </script>

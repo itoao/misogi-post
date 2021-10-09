@@ -12,47 +12,57 @@ declare type Refs<Data> = {
 };
 
 export const state = (): Refs<State> => {
-    return toRefs(reactive<State>({
-        form: {
-            title: '',
-            content: ''
-        },
-        items: [],
-        logoutBtn: false,
-        username: '',
-    }))
+  return toRefs(reactive<State>({
+    form: {
+      comment: ''
+    },
+    items: [],
+    logoutBtn: false,
+    username: ''
+  }))
 }
 
 // Refs<State>は、declare以降のジェネリクスを参照している ＊Dataエイリアス -> State
 
+// export const getters = {
+//   getComment: (state: State) => state.form.comment
+// }
 export const mutations = {
-    async getPostList(state: State): Promise<void> {
-        const postList = await API.graphql({
-            query: listPosts,
-        });
-        ((postList: any) => {
-            state.items = postList.data.listPosts.items
-        })(postList);
-        // 関数内に閉じ込め、any型にすることでdataの型推論を停止。あくまで応急処置
-    },
-    async createPost(state: State): Promise<void> {
-        const content = state.form.content
-        if(!content) return
-        const post = { content }
-        await API.graphql({
-            query: createPost,
-            variables: { input: post }, // 送信データ
-        })
-        state.form.content = ''
-    },
+  async createPost (state: State): Promise<void> {
+    const comment = state.form.comment
+
+    if (!comment) { return }
+
+    const post = {
+      comment
+    }
+
+    await API.graphql({
+      query: createPost,
+      variables: {
+        input: post
+      } // 送信データ
+    })
+
+    state.form.comment = ''
+  },
+  async getPostList (state: State): Promise<void> {
+    const postList = await API.graphql({
+      query: listPosts
+    });
+
+    ((postList: any) => {
+      state.items = postList.data.listPosts.items
+    })(postList)
+    // 関数内に閉じ込め、any型にすることでdataの型推論を停止。あくまで応急処置
+  }
 }
 
-
 export const actions: Actions<IActions, IMutations> = {
-    getPostListAction(ctx) {
-        ctx.commit('getPostList')
-    },
-    createPostAction(ctx) {
-        ctx.commit('createPost')
-    },
+  createPostAction (ctx) {
+    ctx.commit('createPost')
+  },
+  getPostListAction (ctx) {
+    ctx.commit('getPostList')
+  }
 }

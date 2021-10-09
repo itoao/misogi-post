@@ -1,16 +1,19 @@
 module.exports = {
-  root: true,
   env: {
     browser: true,
     node: true
   },
+  // parcerOptions: {
+  //   parcer:'babel-eslint',
+  //   sorceType:'module'
+  // },
   extends: [
-    '@nuxtjs/eslint-config-typescript',
-    'plugin:nuxt/recommended',
-    'prettier'
+    '@tabianco/eslint-config-typescript',
+    'plugin:nuxt/recommended'
   ],
   plugins: [
   ],
   // add your custom rules here
+  root: true,
   rules: {}
 }

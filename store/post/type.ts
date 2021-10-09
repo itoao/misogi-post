@@ -1,7 +1,6 @@
 export interface State {
     form: {
-        title: string,
-        content: string
+        comment: string
     },
     items: string[],
     logoutBtn: boolean,

@@ -10,6 +10,11 @@
       "StackName": "amplify-misogipost-dev-161717",
       "StackId": "arn:aws:cloudformation:ap-northeast-1:604126380041:stack/amplify-misogipost-dev-161717/4e0a5400-12d0-11ec-852e-066c9de695cb",
       "AmplifyAppId": "d226e3zg554xnl"
+    },
+    "categories": {
+      "auth": {
+        "misogipost48b55f15": {}
+      }
     }
   },
   "production": {
