@@ -72,7 +72,8 @@ export default defineComponent({
       API.graphql(
         graphqlOperation(onCreatePost)
       ).subscribe({
-        error: (error: string) => console.log(error), // エラーハンドリングをし、TypeErrorの解消図る
+        error: (error: string) => console.warn(error),
+        // エラーハンドリングをし、TypeErrorの解消図る *consoleがlintにはじかれる
         next: (e: HTMLInputElement) => {
           // コメントが送信されて追加された際、送信内容を一覧に追加
           const post = e.value.data.onCreatePost // データを読み込み

@@ -1,17 +1,16 @@
 <template>
   <div>
     <v-navigation-drawer
-      v-model="drawer"
+      app
+      clipped-left
       :mini-variant.sync="mini"
       permanent
     >
       <v-list-item class="px-2">
-        <v-list-item-title />
-
         <!--  ボタン部分をコンポーネントに切り出し  -->
         <toggle-button
           :mini-prop="mini"
-          @change-button="mini = $event"
+          @change-button="changeButton; mini = $event"
         />
       </v-list-item>
 
@@ -20,7 +19,7 @@
       <!--  リスト部分をコンポーネントに切り出し  -->
       <list-item>
         <template #title>
-          <v-list dense>
+          <v-list>
             <v-list-item
               v-for="menu in menus"
               :key="menu.title"
@@ -53,7 +52,6 @@ export default defineComponent({
   },
 
   setup () {
-    const drawer = ref(true)
     const mini = ref(true)
     // const changeButton = () => {
     //   mini.value = !mini.value
@@ -81,9 +79,14 @@ export default defineComponent({
       }
     ])
 
+    const changeButton = (v: boolean) => {
+      console.log('mini', mini.value)
+      console.log('$event', v)
+      mini.value = v
+    }
+
     return {
-      // changeButton,
-      drawer,
+      changeButton,
       menus,
       mini
     }
