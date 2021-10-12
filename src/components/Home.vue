@@ -7,8 +7,7 @@
       label="禊を開始する"
       outlined
       placeholder="ここに入力してください"
-      @click:append:keydown.enter="createPostAction"
-      @keydown="onEnter"
+      @click:keydown.enter="createPostAction"
     />
     <h2>禊たち</h2>
     <v-card
@@ -31,7 +30,7 @@ import { defineComponent, useStore, computed } from '@nuxtjs/composition-api'
 // import Observable from 'zen-observable'
 import { GraphQLResult } from '@aws-amplify/api-graphql/lib'
 import { API, graphqlOperation } from 'aws-amplify'
-import { onCreatePost } from '~/src/graphql/subscriptions'
+import { onCreatePost } from '../graphql/subscriptions'
 // v-for="item in items" :key=item.comment
 
 // form.comment -> あなたの投稿 -> みんなの投稿
@@ -49,14 +48,8 @@ export default defineComponent({
       store.dispatch('createPostAction')
     }
 
-    const onEnter = (e: KeyboardEvent) => {
-      if (e.keyCode !== 13) { return }
-      createPost()
-    }
-
     return {
       createPost,
-      onEnter,
       textFieldComputed
     }
   },
