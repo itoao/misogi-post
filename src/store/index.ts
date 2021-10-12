@@ -1,8 +1,8 @@
 import { reactive, Ref, toRefs } from '@nuxtjs/composition-api'
 import { API } from 'aws-amplify'
-import { State, Actions, IActions, IMutations } from './post/type'
-import { listPosts } from '~/src/graphql/queries'
-import { createPost } from '~/src/graphql/mutations'
+import { State, Actions, IActions, IMutations } from '../store/post/type'
+import { listPosts } from '../graphql/queries'
+import { createPost } from '../graphql/mutations'
 
 // stateにitemsをおきたい
 declare type Refs<Data> = {

@@ -61,9 +61,9 @@
 
 <script lang="ts">
 import { defineComponent } from '@vue/composition-api'
-import Side from '@/components/Side.vue'
-import HeaderContent from '@/components/Header.vue'
-import FooterContent from '@/components/Footer.vue'
+import Side from '../components/Side.vue'
+import HeaderContent from '../components/Header.vue'
+import FooterContent from '../components/Footer.vue'
 export default defineComponent({
   components: {
     FooterContent,

@@ -42,8 +42,8 @@
 
 <script lang="ts">
 import { defineComponent, ref, reactive } from '@vue/composition-api'
-import ListItem from '~/components/ListItem.vue'
-import ToggleButton from '~/components/ToggleButton.vue'
+import ListItem from '../components/ListItem.vue'
+import ToggleButton from '../components/ToggleButton.vue'
 
 export default defineComponent({
   components: {
@@ -53,9 +53,6 @@ export default defineComponent({
 
   setup () {
     const mini = ref(true)
-    // const changeButton = () => {
-    //   mini.value = !mini.value
-    // }
     const menus = reactive([
       {
         icon: 'mdi-web',
@@ -79,14 +76,7 @@ export default defineComponent({
       }
     ])
 
-    // const changeButton = (v: boolean) => {
-    //   console.log('mini', mini.value)
-    //   console.log('$event', v)
-    //   mini.value = v
-    // }
-
     return {
-      // changeButton,
       menus,
       mini
     }
