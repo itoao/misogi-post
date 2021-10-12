@@ -10,7 +10,7 @@
         <!--  ボタン部分をコンポーネントに切り出し  -->
         <toggle-button
           :mini-prop="mini"
-          @change-button="changeButton; mini = $event"
+          @change-button="mini = $event"
         />
       </v-list-item>
 
@@ -79,14 +79,14 @@ export default defineComponent({
       }
     ])
 
-    const changeButton = (v: boolean) => {
-      console.log('mini', mini.value)
-      console.log('$event', v)
-      mini.value = v
-    }
+    // const changeButton = (v: boolean) => {
+    //   console.log('mini', mini.value)
+    //   console.log('$event', v)
+    //   mini.value = v
+    // }
 
     return {
-      changeButton,
+      // changeButton,
       menus,
       mini
     }

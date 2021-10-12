@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-app>
-      <v-content>
+      <v-main>
         <v-container>
           <v-layout wrap>
             <v-flex>
@@ -54,7 +54,7 @@
             </v-flex>
           </v-layout>
         </v-container>
-      </v-content>
+      </v-main>
     </v-app>
   </div>
 </template>
