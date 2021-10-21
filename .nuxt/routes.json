@@ -14,6 +14,13 @@
     "_name": "_60bae20b"
   },
   {
+    "name": "serch",
+    "path": "/serch",
+    "component": "/Users/ao_ito_/IdeaProjects/playground/misogi-post/src/pages/serch.vue",
+    "chunkName": "pages/serch",
+    "_name": "_a1e4949c"
+  },
+  {
     "name": "index",
     "path": "/",
     "component": "/Users/ao_ito_/IdeaProjects/playground/misogi-post/src/pages/index.vue",

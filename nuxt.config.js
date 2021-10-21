@@ -4,14 +4,15 @@ export default {
   generate: {
     interval: 2000
   },
+
+  srcDir: 'src/',
+
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   srcDir: 'src/',
 
   ssr: false,
-
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     titleTemplate: '%s - misogi-post',
@@ -36,7 +37,10 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/amplify.js', ssr: false }
+    {
+      src: '~/plugins/amplify.js',
+      ssr: false
+    }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -48,7 +52,7 @@ export default {
     '@nuxt/typescript-build',
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    '@nuxtjs/composition-api/module',
+    '@nuxtjs/composition-api/module'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

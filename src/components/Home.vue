@@ -28,7 +28,7 @@
 <script lang="ts">
 import { defineComponent, useStore, computed } from '@nuxtjs/composition-api'
 // import Observable from 'zen-observable'
-// import { GraphQLResult } from '@aws-amplify/api-graphql'
+import { GraphQLResult } from '@aws-amplify/api-graphql/lib'
 import { API, graphqlOperation } from 'aws-amplify'
 import { onCreatePost } from '../graphql/subscriptions'
 // v-for="item in items" :key=item.comment
@@ -64,18 +64,19 @@ export default defineComponent({
       API.graphql(
         graphqlOperation(onCreatePost)
       ).subscribe({
-        error: (error: string) => console.log(error), // エラーハンドリングをし、TypeErrorの解消図る
+        error: (error: GraphQLResult) => console.warn(error),
+        // エラーハンドリングをし、TypeErrorの解消図る *consoleがlintにはじかれる
         next: (e: HTMLInputElement) => {
           // コメントが送信されて追加された際、送信内容を一覧に追加
           const post = e.value.data.onCreatePost // データを読み込み
           let itemState = this.$store.state.items
 
-          if (itemState.some((item: string) => item.comment === post.comment)) { return }// すでに表示されているデータは無視
+          if (this.$store.state.items.some((item: string) => item.comment as string === post.comment)) { return }// すでに表示されているデータは無視
           // もしitems配列に、itemのcommentとpostのcomment（？）が重複して存在していたら終了
           itemState = [...itemState, post] // 新しいデータを追加
           // gettersでstateを変更したほうが良いかも
         }
-      })
+      }) as Promise<GraphQLResult<object>>
     }
   }
 })
