@@ -1,10 +1,6 @@
 import { reactive, Ref, toRefs } from '@nuxtjs/composition-api'
 import { API } from 'aws-amplify'
-<<<<<<< HEAD:src/store/index.ts
-import { State, Actions, IActions, IMutations } from './post/type'
-=======
 import { State, Actions, IActions, IMutations } from '../store/post/type'
->>>>>>> 00d3aed14e2d9d57607d199729d867007f449684:src/store/index.ts
 import { listPosts } from '../graphql/queries'
 import { createPost } from '../graphql/mutations'
 

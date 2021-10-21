@@ -9,11 +9,7 @@
   </div>
 </template>
 
-<<<<<<< HEAD
-<script>
-=======
 <script lang="ts">
->>>>>>> 00d3aed14e2d9d57607d199729d867007f449684
 import { defineComponent } from '@nuxtjs/composition-api'
 export default defineComponent({
   props: {

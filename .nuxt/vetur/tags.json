@@ -5,12 +5,6 @@
   "AppHeader": {
     "description": "Auto imported from components/AppHeader.vue"
   },
-  "Footer": {
-    "description": "Auto imported from components/Footer.vue"
-  },
-  "Header": {
-    "description": "Auto imported from components/Header.vue"
-  },
   "Home": {
     "description": "Auto imported from components/Home.vue"
   },

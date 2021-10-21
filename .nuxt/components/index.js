@@ -1,7 +1,5 @@
 export { default as AppFooter } from '../../src/components/AppFooter.vue'
 export { default as AppHeader } from '../../src/components/AppHeader.vue'
-export { default as Footer } from '../../src/components/Footer.vue'
-export { default as Header } from '../../src/components/Header.vue'
 export { default as Home } from '../../src/components/Home.vue'
 export { default as ListItem } from '../../src/components/ListItem.vue'
 export { default as Modal } from '../../src/components/Modal.vue'

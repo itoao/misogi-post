@@ -8,8 +8,6 @@ You can directly use them in pages and other components without the need to impo
 
 - `<AppFooter>` | `<app-footer>` (components/AppFooter.vue)
 - `<AppHeader>` | `<app-header>` (components/AppHeader.vue)
-- `<Footer>` | `<footer>` (components/Footer.vue)
-- `<Header>` | `<header>` (components/Header.vue)
 - `<Home>` | `<home>` (components/Home.vue)
 - `<ListItem>` | `<list-item>` (components/ListItem.vue)
 - `<Modal>` | `<modal>` (components/Modal.vue)
