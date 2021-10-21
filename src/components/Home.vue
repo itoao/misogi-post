@@ -7,7 +7,7 @@
       label="禊を開始する"
       outlined
       placeholder="ここに入力してください"
-      @click:keydown.enter="createPostAction"
+      @click:append:keydown.enter="createPostAction"
     />
     <h2>禊たち</h2>
     <v-card
@@ -40,7 +40,7 @@ export default defineComponent({
   setup () {
     const store = useStore()
     const textFieldComputed = computed({
-      // v-text-field、v-modelで直接stateを変更せず、算出プロパティの中で処理する
+      // v-text-field内のstateをv-modelで直接変更せず、算出プロパティの中で処理する（ミューテーションでのみ更新）
       get: () => store.dispatch('getPostListAction'), // 入力の取得
       set: () => store.dispatch('createPostAction') // 更新し空に
     })
@@ -56,7 +56,6 @@ export default defineComponent({
 
   created () {
     this.$store.dispatch('getPostListAction')
-    this.subscribe()
   },
 
   methods: {
@@ -70,10 +69,12 @@ export default defineComponent({
         next: (e: HTMLInputElement) => {
           // コメントが送信されて追加された際、送信内容を一覧に追加
           const post = e.value.data.onCreatePost // データを読み込み
+          let itemState = this.$store.state.items
 
           if (this.$store.state.items.some((item: string) => item.comment as string === post.comment)) { return }// すでに表示されているデータは無視
           // もしitems配列に、itemのcommentとpostのcomment（？）が重複して存在していたら終了
-          this.$store.state.items = [...this.$store.state.items, post] // 新しいデータを追加
+          itemState = [...itemState, post] // 新しいデータを追加
+          // gettersでstateを変更したほうが良いかも
         }
       }) as Promise<GraphQLResult<object>>
     }
@@ -82,5 +83,4 @@ export default defineComponent({
 </script>
 
 <style>
-
 </style>

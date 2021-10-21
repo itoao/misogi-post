@@ -1,0 +1,23 @@
+{
+  "AppFooter": {
+    "description": "Auto imported from components/AppFooter.vue"
+  },
+  "AppHeader": {
+    "description": "Auto imported from components/AppHeader.vue"
+  },
+  "Home": {
+    "description": "Auto imported from components/Home.vue"
+  },
+  "ListItem": {
+    "description": "Auto imported from components/ListItem.vue"
+  },
+  "Modal": {
+    "description": "Auto imported from components/Modal.vue"
+  },
+  "Side": {
+    "description": "Auto imported from components/Side.vue"
+  },
+  "ToggleButton": {
+    "description": "Auto imported from components/ToggleButton.vue"
+  }
+}

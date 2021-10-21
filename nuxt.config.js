@@ -8,6 +8,8 @@ export default {
   srcDir: 'src/',
 
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  srcDir: 'src/',
+
   ssr: false,
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -16,7 +18,7 @@ export default {
     titleTemplate: '%s - misogi-post',
     title: 'misogi-post',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },

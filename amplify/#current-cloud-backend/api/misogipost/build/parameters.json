@@ -1,0 +1,8 @@
+{
+    "CreateAPIKey": 1,
+    "AppSyncApiName": "misogipost",
+    "DynamoDBBillingMode": "PAY_PER_REQUEST",
+    "DynamoDBEnableServerSideEncryption": false,
+    "S3DeploymentBucket": "amplify-misogipost-dev-161717-deployment",
+    "S3DeploymentRootKey": "amplify-appsync-files/09388593771912b65a567742e6d3e9deb8824d95"
+}

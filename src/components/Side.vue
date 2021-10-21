@@ -7,7 +7,7 @@
       permanent
     >
       <v-list-item class="px-2">
-        <!--  ボタン部分をコンポーネントに切り出し  -->
+        <!--  ボタン部分をコンポーネントに切り出し、propsとemitで連携させる  -->
         <toggle-button
           :mini-prop="mini"
           @change-button="mini = $event"
@@ -16,10 +16,10 @@
 
       <v-divider />
 
-      <!--  リスト部分をコンポーネントに切り出し  -->
+      <!--  リスト部分をコンポーネントに切り出し、slotで値を子に渡す -->
       <list-item>
         <template #title>
-          <v-list>
+          <v-list dense>
             <v-list-item
               v-for="menu in menus"
               :key="menu.title"
@@ -60,14 +60,9 @@ export default defineComponent({
         url: '/'
       },
       {
-        icon: 'mdi-home',
-        title: 'Home',
-        url: '/home'
-      },
-      {
         icon: 'mdi-text-box-search',
-        title: 'Serch',
-        url: '/serch'
+        title: 'Search',
+        url: '/search'
       },
       {
         icon: 'mdi-information-variant',
