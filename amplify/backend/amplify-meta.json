@@ -1,0 +1,82 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-misogipost-dev-161717-authRole",
+      "UnauthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-dev-161717-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::604126380041:role/amplify-misogipost-dev-161717-authRole",
+      "Region": "ap-northeast-1",
+      "DeploymentBucketName": "amplify-misogipost-dev-161717-deployment",
+      "UnauthRoleName": "amplify-misogipost-dev-161717-unauthRole",
+      "StackName": "amplify-misogipost-dev-161717",
+      "StackId": "arn:aws:cloudformation:ap-northeast-1:604126380041:stack/amplify-misogipost-dev-161717/4e0a5400-12d0-11ec-852e-066c9de695cb",
+      "AmplifyAppId": "d226e3zg554xnl"
+    }
+  },
+  "api": {
+    "misogipost": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7,
+              "description": ""
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "nt3yxvwu2jdqlg5mqgbujck2we",
+        "GraphQLAPIEndpointOutput": "https://ef7cklhrlbhclnxspvjo4iiiwy.appsync-api.ap-northeast-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-teaynxznqnb3hf2zimuvhp5t2i"
+      },
+      "lastPushTimeStamp": "2021-10-14T11:08:00.383Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-misogipost-dev-161717-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apimisogipost"
+      }
+    }
+  },
+  "auth": {
+    "misogipost48b55f15": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "loginMechanisms": [
+          "EMAIL"
+        ],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "output": {
+        "UserPoolId": "ap-northeast-1_kvuMxEq2d",
+        "AppClientIDWeb": "6rpnv331llra931h1praq7o30c",
+        "AppClientID": "1cqopsmi4b2nss6oag5i9vtmcr",
+        "IdentityPoolId": "ap-northeast-1:725d7d11-6b2a-4888-9cd3-ebd56d51c4a2",
+        "UserPoolArn": "arn:aws:cognito-idp:ap-northeast-1:604126380041:userpool/ap-northeast-1_kvuMxEq2d",
+        "IdentityPoolName": "misogipost48b55f15_identitypool_48b55f15__dev",
+        "UserPoolName": "misogipost48b55f15_userpool_48b55f15"
+      },
+      "lastPushTimeStamp": "2021-10-14T11:08:00.385Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-misogipost-dev-161717-deployment/amplify-cfn-templates/auth/misogipost48b55f15-cloudformation-template.yml",
+        "logicalId": "authmisogipost48b55f15"
+      }
+    }
+  }
+}

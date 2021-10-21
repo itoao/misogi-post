@@ -1,0 +1,11 @@
+<template>
+  <div>
+    <v-footer
+      app
+      color="primay"
+      dark
+    >
+      ©︎misogi
+    </v-footer>
+  </div>
+</template>

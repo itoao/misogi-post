@@ -2,9 +2,11 @@ import colors from 'vuetify/es5/util/colors'
 
 export default {
   generate: {
-    interval: 2000,
+    interval: 2000
   },
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
+  srcDir: 'src/',
+
   ssr: false,
 
   // Target: https://go.nuxtjs.dev/config-target
@@ -15,7 +17,7 @@ export default {
     titleTemplate: '%s - misogi-post',
     title: 'misogi-post',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
