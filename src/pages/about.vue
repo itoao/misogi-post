@@ -1,9 +1,6 @@
 <template>
   <div>
-    <side />
-    <app-header />
     <modal />
-    <app-footer />
   </div>
 </template>
 

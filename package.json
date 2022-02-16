@@ -19,6 +19,8 @@
     "aws-amplify": "^4.2.9",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7",
+    "nuxt-typed-vuex": "^0.2.0",
+    "typed-vuex": "^0.2.0",
     "vuetify": "^2.5.5",
     "vuex-guardian": "0.0.6"
   },

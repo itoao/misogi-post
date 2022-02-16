@@ -1,7 +1,6 @@
 <template>
   <div>
-    <side />
-    <app-header />
+
     <v-card>
       <v-container fluid>
         <v-row
@@ -45,6 +44,5 @@
     </v-card>
     <!-- 検索窓 -->
     <!-- 検索結果 -->
-    <app-footer />
   </div>
 </template>

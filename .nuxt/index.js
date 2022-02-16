@@ -16,6 +16,7 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_61c70b5e from 'nuxt_plugin_plugin_61c70b5e' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_7ba52550 from 'nuxt_plugin_plugin_7ba52550' // Source: ./vuetify/plugin.js (mode: 'all')
 import nuxt_plugin_plugin_778105c6 from 'nuxt_plugin_plugin_778105c6' // Source: ./composition-api/plugin.mjs (mode: 'all')
+import nuxt_plugin_nuxttypedvuex_507e034b from 'nuxt_plugin_nuxttypedvuex_507e034b' // Source: ./nuxt-typed-vuex.js (mode: 'all')
 import nuxt_plugin_amplify_900d1ace from 'nuxt_plugin_amplify_900d1ace' // Source: ../src/plugins/amplify.js (mode: 'client')
 import nuxt_plugin_meta_2948cb50 from 'nuxt_plugin_meta_2948cb50' // Source: ./composition-api/meta.mjs (mode: 'all')
 
@@ -221,6 +222,10 @@ async function createApp(ssrContext, config = {}) {
 
   if (typeof nuxt_plugin_plugin_778105c6 === 'function') {
     await nuxt_plugin_plugin_778105c6(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_nuxttypedvuex_507e034b === 'function') {
+    await nuxt_plugin_nuxttypedvuex_507e034b(app.context, inject)
   }
 
   if (process.client && typeof nuxt_plugin_amplify_900d1ace === 'function') {

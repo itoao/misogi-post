@@ -19,6 +19,7 @@ let store = {};
   // Enforce store modules
   store.modules = store.modules || {}
 
+  resolveStoreModules(require('../src/store/post/index.ts'), 'post/index.ts')
   resolveStoreModules(require('../src/store/post/type.ts'), 'post/type.ts')
 
   // If the environment supports hot reloading...
@@ -27,6 +28,7 @@ let store = {};
     // Whenever any Vuex module is updated...
     module.hot.accept([
       '../src/store/index.ts',
+      '../src/store/post/index.ts',
       '../src/store/post/type.ts',
     ], () => {
       // Update `root.modules` with the latest definitions.

@@ -3,17 +3,16 @@ module.exports = {
     browser: true,
     node: true
   },
-  // parcerOptions: {
-  //   parcer:'babel-eslint',
-  //   sorceType:'module'
-  // },
+  parcerOptions: {
+    parcer:'babel-eslint',
+    sorceType:'module'
+  },
   extends: [
-    '@tabianco/eslint-config-typescript',
-    'plugin:nuxt/recommended'
+    '@tabianco/eslint-config-typescript'
   ],
   plugins: [
   ],
-  // add your custom rules here
   root: true,
+  // add your custom rules here
   rules: {}
 }
