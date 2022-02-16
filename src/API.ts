@@ -1,4 +1,3 @@
-/* tslint:disable */
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
@@ -6,15 +5,11 @@ export type CreatePostInput = {
   id?: string | null,
   title: string,
   content: string,
-  price?: number | null,
-  rating?: number | null,
 };
 
 export type ModelPostConditionInput = {
   title?: ModelStringInput | null,
   content?: ModelStringInput | null,
-  price?: ModelIntInput | null,
-  rating?: ModelFloatInput | null,
   and?: Array< ModelPostConditionInput | null > | null,
   or?: Array< ModelPostConditionInput | null > | null,
   not?: ModelPostConditionInput | null,
@@ -87,20 +82,14 @@ export type ModelFloatInput = {
 export type Post = {
   __typename: "Post",
   id: string,
-  title: string,
   content: string,
-  price?: number | null,
-  rating?: number | null,
   createdAt: string,
   updatedAt: string,
 };
 
 export type UpdatePostInput = {
   id: string,
-  title?: string | null,
   content?: string | null,
-  price?: number | null,
-  rating?: number | null,
 };
 
 export type DeletePostInput = {
@@ -110,9 +99,6 @@ export type DeletePostInput = {
 export type ModelPostFilterInput = {
   id?: ModelIDInput | null,
   title?: ModelStringInput | null,
-  content?: ModelStringInput | null,
-  price?: ModelIntInput | null,
-  rating?: ModelFloatInput | null,
   and?: Array< ModelPostFilterInput | null > | null,
   or?: Array< ModelPostFilterInput | null > | null,
   not?: ModelPostFilterInput | null,
@@ -149,10 +135,7 @@ export type CreatePostMutation = {
   createPost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -167,10 +150,7 @@ export type UpdatePostMutation = {
   updatePost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -185,10 +165,7 @@ export type DeletePostMutation = {
   deletePost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -202,10 +179,7 @@ export type GetPostQuery = {
   getPost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -223,10 +197,7 @@ export type ListPostsQuery = {
     items?:  Array< {
       __typename: "Post",
       id: string,
-      title: string,
       content: string,
-      price?: number | null,
-      rating?: number | null,
       createdAt: string,
       updatedAt: string,
     } | null > | null,
@@ -238,10 +209,7 @@ export type OnCreatePostSubscription = {
   onCreatePost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -251,10 +219,7 @@ export type OnUpdatePostSubscription = {
   onUpdatePost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
@@ -264,10 +229,7 @@ export type OnDeletePostSubscription = {
   onDeletePost?:  {
     __typename: "Post",
     id: string,
-    title: string,
     content: string,
-    price?: number | null,
-    rating?: number | null,
     createdAt: string,
     updatedAt: string,
   } | null,
