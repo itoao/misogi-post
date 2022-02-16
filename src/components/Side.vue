@@ -36,6 +36,7 @@
           </v-list>
         </template>
       </list-item>
+      <!-- list-item(アイコン) のクリック時にもドロワーが開く。閉じはしない -->
     </v-navigation-drawer>
   </div>
 </template>
@@ -52,7 +53,7 @@ export default defineComponent({
   },
 
   setup () {
-    const mini = ref(true)
+    const mini = ref(true) // 閉じた状態
     const menus = reactive([
       {
         icon: 'mdi-web',

@@ -1,68 +1,34 @@
-import { reactive, Ref, toRefs } from '@nuxtjs/composition-api'
-import { API } from 'aws-amplify'
-import { State, Actions, IActions, IMutations } from '../store/post/type'
-import { listPosts } from '../graphql/queries'
-import { createPost } from '../graphql/mutations'
+import {
+  getAccessorType,
+  getterTree,
+  mutationTree,
+  actionTree
+} from 'typed-vuex'
 
-// stateにitemsをおきたい
-declare type Refs<Data> = {
-    [K in keyof Data]: Data[K] extends Ref<infer V> ? Ref<V> : Ref<Data[K]>;
-// Dataジェネリクス（State） 'のキーのどれか：Stateのキーが、Ref<infer V>
-// infer 部分的な型抽出
-};
+// Import all your submodules
+import * as post from '~/store/post'
 
-export const state = (): Refs<State> => {
-  return toRefs(reactive<State>({
-    form: {
-      comment: ''
-    },
-    items: [],
-    logoutBtn: false,
-    username: ''
-  }))
-}
+// Keep your existing vanilla Vuex code for state, getters, mutations, actions, plugins, etc.
+export const state = () => ({})
 
-// Refs<State>は、declare以降のジェネリクスを参照している ＊Dataエイリアス -> State
+export const getters = getterTree(state, {})
 
-// export const getters = {
-//   getComment: (state: State) => state.form.comment
-// }
-export const mutations = {
-  async createPost (state: State): Promise<void> {
-    const comment = state.form.comment
+export const mutations = mutationTree(state, {})
 
-    if (!comment) { return }
+export const actions = actionTree({
+  state,
+  getters,
+  mutations
+}, {})
 
-    const post = {
-      comment
-    }
-
-    await API.graphql({
-      query: createPost,
-      variables: {
-        input: post
-      } // 送信データ
-    })
-
-    state.form.comment = ''
-  },
-  async getPostList (state: State): Promise<void> {
-    const postList = await API.graphql({
-      query: listPosts
-    });
-
-    ((postList: any) => {
-      state.items = postList.data.listPosts.items
-    })(postList)
-    // 関数内に閉じ込め、any型にすることでdataの型推論を停止。あくまで応急処置
+// This compiles to nothing and only serves to return the correct type of the accessor
+export const accessorType = getAccessorType({
+  state,
+  getters,
+  mutations,
+  actions,
+  modules: {
+    // The key (submodule) needs to match the Nuxt namespace (e.g. ~/store/submodule.ts)
+    post
   }
-}
-
-export const actions: Actions<IActions, IMutations> = {
-  createPostAction (ctx) {
-    ctx.commit('createPost')
-  },
-  getPostListAction (ctx) {
-    ctx.commit('getPostList')
-  }
-}
+})

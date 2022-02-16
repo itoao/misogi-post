@@ -1,13 +1,13 @@
 <template>
   <div>
     <!-- <h1>あなたの禊</h1> -->
+    <!-- v-model付与 -->
     <v-text-field
-      v-model="textFieldComputed"
       append-icon="mdi-check-bold"
       label="禊を開始する"
       outlined
       placeholder="ここに入力してください"
-      @click:append:keydown.enter="createPostAction"
+      @click:append:keydown.enter="onClickCreatePost"
     />
     <h2>禊たち</h2>
     <v-card
@@ -26,36 +26,33 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, useStore, computed } from '@nuxtjs/composition-api'
-// import Observable from 'zen-observable'
+import { defineComponent, computed } from '@nuxtjs/composition-api'
 import { GraphQLResult } from '@aws-amplify/api-graphql/lib'
 import { API, graphqlOperation } from 'aws-amplify'
-import { onCreatePost } from '../graphql/subscriptions'
-// v-for="item in items" :key=item.comment
+import { createPost } from '~/store/post/index'
 
 // form.comment -> あなたの投稿 -> みんなの投稿
 // items -> みんなの投稿一覧
 
+import { useAccessor } from '~/lib/useAccessor'
+
 export default defineComponent({
   setup () {
-    const store = useStore()
-    const textFieldComputed = computed({
-      // v-text-field内のstateをv-modelで直接変更せず、算出プロパティの中で処理する（ミューテーションでのみ更新）
-      get: () => store.dispatch('getPostListAction'), // 入力の取得
-      set: () => store.dispatch('createPostAction') // 更新し空に
-    })
-    const createPost = () => {
-      store.dispatch('createPostAction')
+    const accessor = useAccessor()
+    const postsStore = accessor.post
+    const onClickCreatePost = async() => {
+      await postsStore.createPost({
+        input: {
+          id: partnersStore?.partnerRole?.id, // 書いたアカウントのID
+          memo // 書かれた内容
+        },
+        msg: 'メモ'
+      })
     }
 
     return {
-      createPost,
-      textFieldComputed
+      onClickCreatePost,
     }
-  },
-
-  created () {
-    this.$store.dispatch('getPostListAction')
   },
 
   methods: {
