@@ -3,21 +3,18 @@
     "name": "about",
     "path": "/about",
     "component": "/Users/ao_ito_/IdeaProjects/playground/misogi-post/src/pages/about.vue",
-    "chunkName": "pages/about",
-    "_name": "_e96ff70c"
+    "chunkName": "pages/about"
   },
   {
     "name": "search",
     "path": "/search",
     "component": "/Users/ao_ito_/IdeaProjects/playground/misogi-post/src/pages/search.vue",
-    "chunkName": "pages/search",
-    "_name": "_60bae20b"
+    "chunkName": "pages/search"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/ao_ito_/IdeaProjects/playground/misogi-post/src/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_aa004182"
+    "chunkName": "pages/index"
   }
 ]

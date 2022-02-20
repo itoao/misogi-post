@@ -1,6 +1,7 @@
 <template>
-  <div>
-
-    <home />
-  </div>
+  <amplify-authenticator>
+    <div>
+      <home />
+    </div>
+  </amplify-authenticator>
 </template>
