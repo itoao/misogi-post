@@ -9,10 +9,7 @@ export const createPost = /* GraphQL */ `
   ) {
     createPost(input: $input, condition: $condition) {
       id
-      title
       content
-      price
-      rating
       createdAt
       updatedAt
     }
@@ -25,10 +22,7 @@ export const updatePost = /* GraphQL */ `
   ) {
     updatePost(input: $input, condition: $condition) {
       id
-      title
       content
-      price
-      rating
       createdAt
       updatedAt
     }
