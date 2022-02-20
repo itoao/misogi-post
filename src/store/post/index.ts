@@ -35,7 +35,7 @@ export const actions = actionTree(
         const res = await gql<CreatePostMutation, CreatePostMutationVariables>(createPost, {
           input: payload
         })
-        console.log(res)
+        return res
       } catch (error) {
         console.error('createPost error', error)
         return ''
