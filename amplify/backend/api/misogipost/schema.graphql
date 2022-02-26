@@ -2,7 +2,9 @@ type Post @model {
   id: ID!
   title: String!
   content: String!
-  price: Int
-  rating: Float
   roleId: ID!
+}
+
+type Account @model {
+  id: ID!
 }

@@ -11,16 +11,22 @@ export type PostListType = Post[]
 
 export const state = () => ({
   isLoading: false,
-  index: [] as PostListType
+  content: [] as PostListType,
+  id: [] as PostListType,
+  title: String
 })
 
 export const mutations = mutationTree(state, {
-  setIndex (state, index) {
-    state.index = index
+  setIndex (state, content) {
+    state.content = content
   },
   setIsLoading (state, isLoading: boolean) {
     state.isLoading = isLoading
   },
+  createPostInput(state) {
+    title: state.title
+    content: state.content
+  }
 })
 
 export const actions = actionTree(
@@ -29,16 +35,28 @@ export const actions = actionTree(
     mutations
   },
   {
-    async createPost ({ commit }, payload: CreatePostInput) : Promise<string | null | undefined> {
+    async createPost ({ commit }, payload: CreatePostInput) : Promise<void> {
       commit('setIsLoading', true)
       try {
+        // const {
+        //   data: {
+        //     createPost: ret
+        //   } = {},
+        //   errors
+        // } = await gql<CreatePostMutation, CreatePostMutationVariables>(
+        //   createPost, {
+        //     input: payload
+        //   }
+        // )
+        // if(!ret || errors){
+        //   throw new Error
+        // }
         const res = await gql<CreatePostMutation, CreatePostMutationVariables>(createPost, {
           input: payload
         })
-        return res
+
       } catch (error) {
         console.error('createPost error', error)
-        return ''
       } finally {
         commit('setIsLoading', false)
       }
