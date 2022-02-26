@@ -12,7 +12,7 @@
     />
     <h2>禊たち</h2>
     <v-card
-      v-for="(item, index) in $store.state.items"
+      v-for="(item, index) in postsStore.post"
       :key="index"
       elevation="9"
       outlined
@@ -28,14 +28,10 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from '@nuxtjs/composition-api'
-import { GraphQLResult } from '@aws-amplify/api-graphql/lib'
-import { API, graphqlOperation } from 'aws-amplify'
-import { createPost } from '~/store/post/index'
+import { useAccessor } from '~/lib/useAccessor'
 
 // form.comment -> あなたの投稿 -> みんなの投稿
 // items -> みんなの投稿一覧
-
-import { useAccessor } from '~/lib/useAccessor'
 
 export default defineComponent({
   setup () {
@@ -44,16 +40,17 @@ export default defineComponent({
 
     const writtenText = ref("")
     const onClickCreatePost = async() => {
+      console.log(writtenText.value)
       await postsStore.createPost({
         input: {
-          id: 316237, // 書いたアカウントのID
+          id: 'ap-northeast-1:3a0f7cc2-f076-4ecb-8061-23aa4e2892dd', // 書いたアカウントのID
           content: writtenText.value // 書かれた内容
         },
      })
 
     }
-
     return {
+      postsStore,
       writtenText,
       onClickCreatePost,
     }

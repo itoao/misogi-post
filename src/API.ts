@@ -3,7 +3,6 @@
 
 export type CreatePostInput = {
   id?: string | null,
-  title: string,
   content: string,
 };
 

@@ -1,7 +1,9 @@
 <template>
-  <div>
-    <modal />
-  </div>
+  <amplify-authenticator>
+    <div>
+      <modal />
+    </div>
+  </amplify-authenticator>
 </template>
 
 // scriptをコメントアウトすると、Side と Modal のみ表示された
